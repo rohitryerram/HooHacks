@@ -1,19 +1,31 @@
 var student;
+var button;
+var classroom;
+var playground;
 
 function preload () {
-    this.load.image('bg', 'assets/classroom.png');
+    this.load.image('classroom', 'assets/classroom.png');
     this.load.image('student', 'assets/character.png');
+    this.load.image('playground', 'assets/playground.png');
 }
 
 function create () {
-    let background = this.add.image(0, 0, 'bg');
-    background.setOrigin(0, 0);
-    student = this.add.sprite(500, 750, 'student');
+    classroom = this.add.image(0, 0, 'classroom');
+    playground = this.add.image(0, 0, 'playground');
+    playground.visible = false;
+    classroom.setOrigin(0, 0);
+    playground.setOrigin(0, 0);
+    student = this.physics.add.sprite(500, 750, 'student');
+    student.setCollideWorldBounds(true);
     student.setScale(0.2, 0.2);
     cursors = this.input.keyboard.createCursorKeys();
 }
 
 function update () {
+    if (student.x == 300 && student.y == 750) {
+        classroom.visible = false;
+        playground.visible = true;
+    }
     if (cursors.left.isDown) {
         student.x -= 4;
     }
@@ -36,6 +48,12 @@ let config = {
         preload: preload,
         create: create,
         update: update
+    },
+    physics: {
+        default: 'arcade',
+        arcade: {
+            debug: false
+        }
     }
 }
 
