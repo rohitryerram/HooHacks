@@ -1,3 +1,7 @@
+# Club Scholar
+#### A web app targeted at younger students that brings the feeling of an in person classroom to the online world while minimizing the confusion of online learning, keeping students organized with everything in one space.
+<i><b>Created for HooHacks 2021</b></i>
+
 ## Inspiration
 With the rise of online learning due to the COVID-19 pandemic, our team was inspired to develop an interactive platform for students and teachers that mimics the experience of being in an in person classroom.
 
